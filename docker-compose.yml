@@ -1,61 +1,55 @@
 version: '3.7'
+
+volumes:
+  postgres:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PWD}/database/data
+
 services:
   redis:
     image: redis:latest
-    container_name: wagtail-redis
+    container_name: cdv-redis
 
   db:
-    build:
-      context: ./postgres
-      dockerfile: Dockerfile
-      target: base-develop
-    container_name: wagtail-db
-    restart: always
-    tty: true
-#    volumes:
-#      - postgres:/var/lib/postgresql/11/main  # base de datos persistente
+    image: postgres:11
+    container_name: cdv_database
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: userdb
+      POSTGRES_DB: carnetdevacunacion
+      POSTGRES_HOST_AUTH_METHOD: trust
+      PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - 5432:5432
-      - 24:22
+    security_opt:
+      - seccomp:unconfined
 
   web:
     build:
-      context: ./django
+      context: ./
       dockerfile: Dockerfile
-      target: base-develop
-    container_name: wagtail
-    restart: always
+    container_name: cdv_django
     tty: true
     depends_on:
       - redis
       - db
     volumes:
-      - ./django:/webapps/django
-      - ./django/ansible:/tmp/ansible
+      - ./:/webapps/carnetdevacunacion
     ports:
-      - 80:80
-      - 7001:8080
-      - 7002:5555
-      - 23:22
+      - "7000:7000" # ./manage.py runserver
+      - "7001:7001" # ./manage.py shell_plus --notebook
+      - "7002:7002" # .debug vscode
     environment:
-      - NGINX_HOST=localhost
-      - NGINX_PORT=80
+      - SECRET_KEY="&l313vwhvv+jx=qf1nl^wxti1mohut&)ddnioth$yflcj8hqlc"
     command: >
-      sh -c "service supervisor start &&
-             supervisorctl reread &&
-             supervisorctl update &&
-             supervisorctl start all &&
-             service ssh start &&
-             service nginx start &&
-             wait-for-it db:5432 --strict --timeout=60 -- django-migrate &&
-             /bin/bash"
-
-#volumes:
-#  postgres:
-#    driver: local-persist
-#    driver_opts:
-#      mountpoint: ${PWD}/data/postgres
-#  neo4j:
-#    driver: local-persist
-#    driver_opts:
-#      mountpoint: ${PWD}/data/neo4j
+      bash -c "
+      wait-for-it db:5432 --strict --timeout=60 -- django-migrate &&
+      poetry lock --no-update &&
+      source /opt/venv/bin/activate &&
+      ./manage.py runserver 0.0.0.0:7000
+      "

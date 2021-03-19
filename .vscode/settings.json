@@ -1,0 +1,32 @@
+{
+	"python.pythonPath": "/opt/venv/bin/python",
+	"python.formatting.autopep8Path": "/opt/venv/bin/autopep8",
+	"python.formatting.provider": "autopep8",
+	"python.linting.flake8Path": "/opt/venv/bin/flake8",
+	"python.linting.enabled": true,
+	"python.linting.flake8Enabled": true,
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true,
+        "**/node_modules": true,
+    },
+	"python.linting.flake8Args": [
+        "--max-line-length=80",
+    ],
+	"python.linting.mypyArgs": [
+        "--follow-imports=silent",
+        "--show-column-numbers",
+        "--load-plugins",
+        "--enable=W0614",
+        "pylint_django"
+    ],
+    "editor.rulers": [
+        80,
+        100
+    ]    
+}

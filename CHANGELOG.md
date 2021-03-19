@@ -8,8 +8,8 @@ y este proyecto adhiere a [Semantic Versioning](http://semver.org/spec/v2.0.0.ht
 ### Added
 ### Fixed
 ### Feature
-- [Descripción.](https://github.com/saengate/djfullapp/pull/#)
+- [Descripción.](https://github.com/continuum/carnetdevacunacion/pull/#)
 
-## [0.1.0] - 2020-07-20
+## [0.1.0] - 2021-03-19
 ### Feature
-- [Agrega como `postgres` y `django` submodulos al proyecto wagtail compose.](https://github.com/saengate/djfullapp/pull/#)
+- [Crea una imagen de django.](https://github.com/continuum/carnetdevacunacion/pull/1)
