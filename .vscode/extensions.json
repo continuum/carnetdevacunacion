@@ -1,14 +1,16 @@
 {
     "recommendations": [
         "eamodio.gitlens",
+		"zignd.html-css-class-completion",
         "eg2.vscode-npm-script",
-        "ms-python.vscode-pylance",
-        "ms-python.python",
-        "himanoa.python-autopep8",
+        "christian-kohler.npm-intellisense",
+        "syler.sass-indented",
         "foxundermoon.shell-format",
         "gruntfuggly.todo-tree",
         "be5invis.toml",
+        "octref.vetur",
+        "sdras.vue-vscode-snippets",
+        "mishannn.vuex-suggest",
         "redhat.vscode-yaml",
-        "dsebastien.vscode-python-pack",
     ]
 }

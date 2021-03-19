@@ -10,6 +10,6 @@ y este proyecto adhiere a [Semantic Versioning](http://semver.org/spec/v2.0.0.ht
 ### Feature
 - [Descripción.](https://github.com/continuum/carnetdevacunacion/pull/#)
 
-## [0.1.0] - 2021-03-19
+## [0.1.0] - 2020-07-19
 ### Feature
-- [Crea una imagen de django.](https://github.com/continuum/carnetdevacunacion/pull/1)
+- [Crea imagen de vue.](https://github.com/continuum/carnetdevacunacion/pull/1)
