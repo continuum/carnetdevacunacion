@@ -1,9 +1,11 @@
 <template>
   <div class="dashboard">
     <div class="container">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
+      <nav class="navbar mb-6" role="navigation" aria-label="main navigation">
         <div class="navbar-brand ml-3">
-          <a class="navbar-item logo" href="#"> </a>
+          <a class="navbar-item logo" href="#">
+            <Logo />
+          </a>
           <a
             role="button"
             class="navbar-burger"
@@ -32,74 +34,91 @@
         </div>
       </nav>
       <!-- Form -->
-      <div class="columns">
-        <div class="column is-three-fifths is-offset-one-fifth">
-          <div
-            class="typeform-widget"
-            data-url="https://form.typeform.com/to/UBZYzyqb?typeform-medium=embed-snippet"
-            style="width: 100%; height: 550px"
-          ></div>
+      <div class="pet-form">
+        <h3 class="is-size-4 has-text-weight-semibold">
+          Ingresa la información de tu mascota
+        </h3>
+        <div class="columns">
+          <div class="column is-three-fifths is-offset-one-fifth">
+            <div
+              class="typeform-widget"
+              data-url="https://form.typeform.com/to/UBZYzyqb?typeform-medium=embed-snippet"
+              style="width: 100%; height: 550px"
+            ></div>
+          </div>
         </div>
       </div>
       <!-- Datos mascotas -->
-      <div class="columns info-mascotas my-6">
+      <div class="info-mascotas my-6">
+        <h3 class="is-size-4 has-text-weight-semibold mb-4">
+          Detalle Mascotas
+        </h3>
         <!-- Elemento a replicar por mascota 
         si es 1 mascota la class "column" lleva la clase:is-three-fifths is-offset-one-fifth
         Si son más mascotas se borra -->
-        <div class="column is-three-fifths is-offset-one-fifth">
-          <div class="card">
-            <div class="card-content">
-              <div class="content">
-                <p class="title is-size-4 mb-0">Catón</p>
-                <p>Nº de Chip <a href="#">900115000803757</a></p>
+        <div class="columns">
+          <div class="column is-three-fifths is-offset-one-fifth">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <p class="title is-size-4 mb-0">Catón</p>
+                  <p>
+                    Nº de Chip
+                    <a class="has-text-primary" href="#">900115000803757</a>
+                  </p>
+                </div>
+                <div class="content my-5">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="has-text-primary has-text-centered">
+                          Vacuna
+                        </th>
+                        <th class="has-text-primary has-text-centered">
+                          Aplicación
+                        </th>
+                        <th class="has-text-primary has-text-centered">
+                          Próxima
+                        </th>
+                        <th class="has-text-primary">Respaldo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Séxtuple u Óctuple</th>
+                        <td class="has-text-centered">01/03/2021</td>
+                        <td class="has-text-centered">01/08/2021</td>
+                        <td class="has-text-centered">
+                          <div class="image is-96x96">
+                            <img
+                              class="has-text-centered"
+                              src="https://bulma.io/images/placeholders/128x128.png"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Séxtuple u Óctuple</th>
+                        <td class="has-text-centered">01/03/2021</td>
+                        <td class="has-text-centered">01/08/2021</td>
+                        <td class="has-text-centered">
+                          <div class="image is-96x96">
+                            <img
+                              class="has-text-centered"
+                              src="https://bulma.io/images/placeholders/128x128.png"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div class="content my-5">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th class="has-text-link has-text-centered">Vacuna</th>
-                      <th class="has-text-link has-text-centered">
-                        Aplicación
-                      </th>
-                      <th class="has-text-link has-text-centered">Próxima</th>
-                      <th class="has-text-link">Respaldo</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>Séxtuple u Óctuple</th>
-                      <td class="has-text-centered">01/03/2021</td>
-                      <td class="has-text-centered">01/08/2021</td>
-                      <td class="has-text-centered">
-                        <div class="image is-96x96">
-                          <img
-                            class="has-text-centered"
-                            src="https://bulma.io/images/placeholders/128x128.png"
-                          />
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>Séxtuple u Óctuple</th>
-                      <td class="has-text-centered">01/03/2021</td>
-                      <td class="has-text-centered">01/08/2021</td>
-                      <td class="has-text-centered">
-                        <div class="image is-96x96">
-                          <img
-                            class="has-text-centered"
-                            src="https://bulma.io/images/placeholders/128x128.png"
-                          />
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <footer class="card-footer">
+                <a href="#" class="card-footer-item">Editar</a>
+                <a href="#" class="card-footer-item">Eliminar</a>
+              </footer>
             </div>
-            <footer class="card-footer">
-              <a href="#" class="card-footer-item">Editar</a>
-              <a href="#" class="card-footer-item">Eliminar</a>
-            </footer>
           </div>
         </div>
       </div>
@@ -108,6 +127,13 @@
 </template>
 
 <script>
+import Logo from "@/components/svg/Logo.vue";
+
+export default {
+  name: "Header",
+  components: { Logo },
+};
+
 (function () {
   var qs,
     js,

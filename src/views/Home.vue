@@ -3,6 +3,11 @@
     <div class="container">
       <div class="columns">
         <div class="column is-three-fifths is-offset-one-fifth">
+          <div class="mt-5">
+            <a class="logo" href="#">
+              <Logo />
+            </a>
+          </div>
           <div class="card mt-6">
             <div class="card-content">
               <div class="content">
@@ -13,11 +18,18 @@
                     <input
                       class="input"
                       type="email"
-                      placeholder="Email input"
-                      value="hello@"
+                      placeholder="ejemplo@correo.com"
+                      value=""
                     />
                   </div>
                   <p class="help">This email is invalid</p>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <button class="button is-primary is-fullwidth">
+                      Ingresar
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -31,10 +43,11 @@
 <script>
 // @ is an alias to /src
 import i18n from "@/plugins/i18n";
+import Logo from "@/components/svg/Logo.vue";
 
 export default {
   name: "Home",
-  components: {},
+  components: { Logo },
   computed: {
     message: function () {
       return this.$t("hello");
