@@ -1,59 +1,65 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-      <div>
-        <button v-for="entry in languages" :key="entry.title" @click="changeLocale(entry.language)">
-        <flag :iso="entry.flag" v-bind:squared=false /> {{entry.title}}
-        </button>
+    <div class="container">
+      <div class="columns">
+        <div class="column is-three-fifths is-offset-one-fifth">
+          <div class="card mt-6">
+            <div class="card-content">
+              <div class="content">
+                <p class="title is-4">Ingresa</p>
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="email"
+                      placeholder="Email input"
+                      value="hello@"
+                    />
+                  </div>
+                  <p class="help">This email is invalid</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    <HelloWorld :msg="message"/>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import i18n from '@/plugins/i18n';
+import i18n from "@/plugins/i18n";
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  },
+  name: "Home",
+  components: {},
   computed: {
-    message: function() {
-      return this.$t('hello');
-    }
+    message: function () {
+      return this.$t("hello");
+    },
   },
   data() {
     return {
       languages: [
         {
-          flag: 'us',
-          language: 'en',
-          title: 'English'
+          flag: "us",
+          language: "en",
+          title: "English",
         },
         {
-          flag: 'es',
-          language: 'es',
-          title: 'Español'
-        }
-      ]
+          flag: "es",
+          language: "es",
+          title: "Español",
+        },
+      ],
     };
   },
   methods: {
     changeLocale(locale) {
       i18n.locale = locale;
-      }
-    }
-}
+    },
+  },
+};
 </script>
-
-<style scoped>
-button {
-  padding: 15px;
-  border: 1px solid green;
-  font-size: 18px;
-  margin: 15px;
-}
-</style>
