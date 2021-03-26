@@ -7,7 +7,7 @@ import "./vee-validate";
 import Buefy from 'buefy';
 import { library } from '@fortawesome/fontawesome-svg-core';
 // internal icons
-import { 
+import {
   faCheck,
   faCheckCircle,
   faInfoCircle,
@@ -55,4 +55,4 @@ new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app');
+}).$mount('#app')
