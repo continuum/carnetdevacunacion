@@ -5,8 +5,11 @@
 
 
 $link: #FF614B;
+$link-light: #fde5e2;
 $primary-light: #DDEDEC;
 $success-light: #7C9C9A;
+$success-dark:#13473C;
+
 
 
 // Font
@@ -83,7 +86,32 @@ $colors: mergeColorMaps(
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 
+.table__wrapper{
+        overflow-x: auto;
+}
+
+.content table td, .content table th {
+    vertical-align: middle;
+}
+th{
+        line-height: initial;
+}
 
 //CSS 
 @import "style/login.scss";
 @import "style/dashboard.scss"; 
+
+
+@media only screen and (max-width: 600px) {
+        .columns-pet {
+          padding:12px !important;
+          .column{
+                .card{
+                        .card-content{
+                                padding-left: 0.75rem !important;
+                                padding-right: 0.75rem !important;
+                        }
+                }
+          }
+        }
+ }

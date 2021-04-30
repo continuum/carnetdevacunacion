@@ -4,14 +4,14 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
   },
   {
-    path: '/about',
+    path: '/vilma_ceron/m1/caton_chip900115000803757',
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
