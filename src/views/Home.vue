@@ -65,8 +65,10 @@
                   Si luego de contratar nuestro servicio consideras que no es lo
                   deseado, te devolveremos el 100% de lo contratado.
                 </p>
-                <p class="has-text-centered">Si tienes alguna duda contáctanos a:</p>
-    
+                <p class="has-text-centered">Si tienes alguna duda contáctanos a:
+                  <a :href="'mailto:hola@carnetdevacunacion.cl'">hola@carnetdevacunacion.cl</a>  
+                </p>                
+
               </div>
             </div>
           </div>
